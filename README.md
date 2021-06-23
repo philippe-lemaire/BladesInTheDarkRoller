@@ -1,74 +1,19 @@
-# Data analysis
-- Document here the project: BladesInTheDarkRoller
-- Description: Project Description
-- Data Source:
-- Type of analysis:
+# Blades in the Dark Roller for Python
 
-Please document the project the better you can.
+## usage
 
-# Startup the project
+Install the package
 
-The initial setup.
+`pip install git+https://github.com/philippe-lemaire/BladesInTheDarkRoller`
 
-Create virtualenv and install the project:
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv ~/venv ; source ~/venv/bin/activate ;\
-    pip install pip -U; pip install -r requirements.txt
-```
+Import
 
-Unittest test:
-```bash
-make clean install test
-```
+`from BladesInTheDarkRoller.roller import Roller`
 
-Check for BladesInTheDarkRoller in gitlab.com/{group}.
-If your project is not set please add it:
+Initialize
 
-- Create a new project on `gitlab.com/{group}/BladesInTheDarkRoller`
-- Then populate it:
+`roller = Roller()`
 
-```bash
-##   e.g. if group is "{group}" and project_name is "BladesInTheDarkRoller"
-git remote add origin git@github.com:{group}/BladesInTheDarkRoller.git
-git push -u origin master
-git push -u origin --tags
-```
+Use
 
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-BladesInTheDarkRoller-run
-```
-
-# Install
-
-Go to `https://github.com/{group}/BladesInTheDarkRoller` to see the project, manage issues,
-setup you ssh public key, ...
-
-Create a python3 virtualenv and activate it:
-
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv -ppython3 ~/venv ; source ~/venv/bin/activate
-```
-
-Clone the project and install it:
-
-```bash
-git clone git@github.com:{group}/BladesInTheDarkRoller.git
-cd BladesInTheDarkRoller
-pip install -r requirements.txt
-make clean install test                # install and test
-```
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-BladesInTheDarkRoller-run
-```
+`roller.actionRoll(2)`
