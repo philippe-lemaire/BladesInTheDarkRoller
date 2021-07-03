@@ -11,3 +11,7 @@ pytest
 # utilities
 pyinputplus
 termcolor
+
+# api / web
+fastapi
+streamlit
