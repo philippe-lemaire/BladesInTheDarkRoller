@@ -8,10 +8,7 @@ wheel>=0.29
 coverage
 pytest
 
-# utilities
-pyinputplus
-termcolor
 
 # api / web
-fastapi
+uvicorn
 streamlit
