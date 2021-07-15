@@ -54,11 +54,11 @@ selected_roll = st.selectbox(
 
 ## action dice
 if selected_roll == roll_types[0]:
-    action_rating = st.selectbox(label="How many dice?", options=range(1, 6))
+    action_rating = st.selectbox(label="How many dice?", options=range(0, 7))
 
 # Resistance dice
 if selected_roll == roll_types[1]:
-    resist_rating = st.selectbox(label="How many dice?", options=range(1, 6))
+    resist_rating = st.selectbox(label="How many dice?", options=range(0, 7))
 
 # Fortune dice
 if selected_roll == roll_types[3]:
@@ -120,20 +120,24 @@ if selected_roll == roll_types[2]:
     )
 # action roll
 if selected_roll == roll_types[0] and st.button(label=label):
-    result = r.actionRoll(action_rating)
+    result, pool = r.actionRoll(action_rating)
+    st.image([f"img/{die}.png" for die in pool])
     st.markdown(result)
 
 # Resistance roll
 if selected_roll == roll_types[1] and st.button(label=label):
-    result = r.resistanceRoll(resist_rating)
+    result, pool = r.resistanceRoll(resist_rating)
+    st.image([f"img/{die}.png" for die in pool])
     st.markdown(result)
 
 # Engagement roll
 if selected_roll == roll_types[2] and st.button(label=label):
-    result = r.engagementRoll(engagementDice)
+    result, pool = r.engagementRoll(engagementDice)
+    st.image([f"img/{die}.png" for die in pool])
     st.markdown(result)
 
 # Fortune roll
 if selected_roll == roll_types[3] and st.button(label=label):
-    result = r.fortuneRoll(fortune_dice)
+    result, pool = r.fortuneRoll(fortune_dice)
+    st.image([f"img/{die}.png" for die in pool])
     st.markdown(result)
